@@ -19,9 +19,19 @@ set autochdir
 colorscheme desert
 filetype on
 syntax on
+set laststatus=2
 
 nnoremap <f3> :NERDTree<CR><C-w>l 
+" brackets auto complete
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap < <><Esc>i
+inoremap ' ''<Esc>i
+inoremap " ""<Esc>i
+inoremap { {<CR>}<Esc>O
 
+
+" coc.nvim config
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1):
       \ CheckBackspace() ? "\<Tab>" :
@@ -32,6 +42,9 @@ function! CheckBackspace() abort
       let col = col('.') - 1
       return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " plug-in init
 call plug#begin('~/.vimfiles/bundle')
@@ -49,7 +62,6 @@ call plug#end()
 autocmd VimEnter * NERDTree | wincmd p
 let NERDTreeShowHidden = 1
 
-set laststatus=2
 
 " Airline
 let g:airline#extension#tabline#enbaled=1   " 开启 tab 栏

@@ -1,4 +1,5 @@
 {
+    "suggest.noselect":true,
     "languageserver": {
         "svlangserver": {
             "module": "/INSTALLATION/PATH/lib/svlangserver.js",
@@ -13,3 +14,4 @@
         }
     }
 }
+
