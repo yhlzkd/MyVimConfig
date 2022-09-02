@@ -1,2 +1,2 @@
-cp ~/.vimrc -Force .vimrc
-cp ~/.vimfiles/ -r -Force ./
+Copy-Item ~/.vimrc -Force .vimrc
+Copy-Item ~/.vimfiles/ -r -Force ./

@@ -161,9 +161,8 @@ let g:ale_lint_on_text_changed      = 0
 let g:ale_lint_on_insert_leave      = 1
 let g:ale_lint_on_enter             = 1
 let g:ale_enable                    = 1
-
 """"""""""ale config finish"""""""""""
 """"""""""""""""""""""""""""""""""""""
 
 " python configure
-set pythonthreedll=/Users/yhlzk/AppData/Local/Programs/Python/Python310/python310.dll
+set pythonthreedll=$HOME/AppData/Local/Programs/Python/Python310/python310.dll
