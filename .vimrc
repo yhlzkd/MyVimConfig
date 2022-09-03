@@ -148,6 +148,7 @@ let g:NERDTreeChDirMode = 2
 
 " Airline
 let g:airline#extension#tabline#enbaled=1   " 开启 tab 栏
+let g:airline_theme='powerlineish'
 """"""""""""""""""""""""""""""""""""""
 """"""""""""""ale config"""""""""""""" 
 map <F4> :ALEToggle<CR>
