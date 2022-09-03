@@ -78,9 +78,12 @@ autocmd BufNewFile,BufRead *.v noremap <F6> :call AutoInst(0)<CR>
 """""""""""""""""""""""""""""""""""""
 
 " LeaderF map
-nnoremap <leader>t :LeaderfTag<CR>
-nnoremap <leader>l :LeaderfLine<CR>
-nnoremap <leader>F :LeaderfFunction<CR>
+let g:Lf_ShortcutF = '<leader>lff'
+leg g:Lf_ShortcutB = '<leader>lfb'
+nnoremap <leader>lff :LeaderfFile<CR>
+nnoremap <leader>lft :LeaderfTag<CR>
+nnoremap <leader>lfl :LeaderfLine<CR>
+nnoremap <leader>lfF :LeaderfFunction<CR>
 
 " tagbar config
 nmap <F8> :TagbarToggle<CR>
