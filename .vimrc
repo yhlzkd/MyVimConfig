@@ -68,19 +68,23 @@ Plug 'preservim/tagbar'
 " Plug 'Konfekt/FastFold'
 Plug 'HonkW93/automatic-verilog'
 Plug 'dense-analysis/ale'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " NERDTree config
-nnoremap <f3> :NERDTree<CR><C-w>l 
+noremap <F3> :NERDTreeToggle<CR><C-w>l 
 
-""""""""""""""""verilog-automatic"""""""""""""""""
+" Markdown Preview
+autocmd BufNewFile,BufRead *.md noremap <F5> :MarkdownPreview<CR>
+
+
+"""""""""""""""""""""""""verilog-automatic"""""""""""""""""""""""
 autocmd BufNewFile,BufRead *.v noremap <F6> :call AutoInst(0)<CR>
-"""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " LeaderF map
 let g:Lf_ShortcutF = '<leader>lff'
-leg g:Lf_ShortcutB = '<leader>lfb'
-nnoremap <leader>lff :LeaderfFile<CR>
+let g:Lf_ShortcutB = '<leader>lfb'
 nnoremap <leader>lft :LeaderfTag<CR>
 nnoremap <leader>lfl :LeaderfLine<CR>
 nnoremap <leader>lfF :LeaderfFunction<CR>

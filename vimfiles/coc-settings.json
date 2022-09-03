@@ -2,13 +2,13 @@
     "suggest.noselect":true,
     "languageserver": {
         "svlangserver": {
-            "module": "/INSTALLATION/PATH/lib/svlangserver.js",
-            "filetypes": ["systemverilog"],
+            "module": "C:\\Users\\yhlzk\\scoop\\persist\\nodejs-lts\\bin\\node_modules\\@imc-trading\\svlangserver\\lib\\svlangserver.js",
+            "filetypes": ["systemverilog", "verilog"],
             "settings": {
-                "systemverilog.includeIndexing": ["**/*.{sv,svh}"],
+                "systemverilog.includeIndexing": ["**/*.{sv,svh,v}"],
                 "systemverilog.excludeIndexing": ["test/**/*.sv*"],
                 "systemverilog.defines" : [],
-                "systemverilog.launchConfiguration": "/TOOL/PATH/verilator -sv -Wall --lint-only",
+                "systemverilog.launchConfiguration": "iverilog",
                 "systemverilog.formatCommand": "/TOOL/PATH/verible-verilog-format"
             }
         }
