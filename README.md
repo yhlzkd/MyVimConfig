@@ -6,7 +6,7 @@
 
 1. 从 <https://github.com/vim/vim-win32-installer/releases> 下载gVim x64版本并安装;
 2. 安装[universal-ctags](https://github.com/universal-ctags/ctags-win32/releases),
-[node.js](https://nodejs.org/en/), [iverilog](http://iverilog.icarus.com/)
+[node.js](https://nodejs.org/en/), [iverilog](http://iverilog.icarus.com/), [git](https://git-scm.com/),
 并配置环境变量(手动安装比较麻烦，推荐使用[scoop](https://github.com/ScoopInstaller/Scoop)命令行安装比较方便);
 3. 将`.vimrc`文件放到`$HOME`目录;
 4. 将`vimfiles`文件夹放到`$HOME`目录;

@@ -1,4 +1,5 @@
 {
+    "npm.binPath": "npm",
     "suggest.noselect":true,
     "languageserver": {
         "svlangserver": {

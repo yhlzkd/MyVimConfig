@@ -22,11 +22,11 @@ set shiftwidth=4
 set expandtab
 set guifont=Consolas
 set autochdir
+set backspace=2 " 解决backspace键无法退格到上一行的问题
 colorscheme desert
 filetype on
 syntax on
 set laststatus=2
-
 
 
 " coc.nvim config
@@ -51,9 +51,15 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" nodejs path for coc.nvim
+" let g:coc_node_path = '$VIM/nodejs/node.exe'
+
+" coc-setting.json for coc.nvim
+" let g:coc_config_home = '$VIM/vimfiles/'
+
 
 " plug-in init
-call plug#begin('~/.vimfiles/bundle')
+silent! call plug#begin('~/.vimfiles/bundle')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree' 
 Plug 'junegunn/vim-easy-align'
@@ -71,8 +77,6 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
 call plug#end()
 
-" NERDTree config
-noremap <F3> :NERDTreeToggle<CR><C-w>l 
 
 " Markdown Preview
 autocmd BufNewFile,BufRead *.md noremap <F5> :MarkdownPreview<CR>
@@ -140,10 +144,12 @@ let g:tagbar_type_systemverilog = {
      \ },
      \}
 
+" NERDTree config
 " start NERDTree while vim init
 autocmd VimEnter * NERDTree | wincmd p
 let NERDTreeShowHidden  = 1
-let g:NERDTreeChDirMode = 2
+noremap <F3> :NERDTreeToggle<CR><C-w>l 
+let NERDTreeChDirMode = 3
 
 
 " Airline
@@ -174,3 +180,4 @@ let g:ale_enable                    = 1
 
 " python configure
 set pythonthreedll=$HOME/AppData/Local/Programs/Python/Python310/python310.dll
+" set pythonthreehome=$VIM/python310
