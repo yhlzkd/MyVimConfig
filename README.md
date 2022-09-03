@@ -1,8 +1,8 @@
 # MyVimConfig
 
-这是个人使用的Vim配置文件，主要使用coc.nvim作为代码自动补全工具。
+这是个人使用的Vim配置文件，主要是为了写Verilog的配置。
 
-## Installation
+## 安装
 
 1. 从 <https://github.com/vim/vim-win32-installer/releases> 下载gVim x64版本并安装;
 2. 安装[universal-ctags](https://github.com/universal-ctags/ctags-win32/releases),
@@ -24,7 +24,7 @@
 
 7. 打开vim以后输入`:PlugInstall`, 等待插件安装完成。
 
-## Keymaps
+## 快捷键
 
 **`<leader> : <space>`**
 
@@ -42,7 +42,7 @@
 
 |模式|按键|功能|注释|
 |:---:|:---:|:---:|:---:|
-|normal/visual/insert|`<F3>`|打开/更新目录树|[NERDTree](NERDTree)插件功能|
+|normal/visual/insert|`<F3>`|打开/关闭目录树|[NERDTree](https://github.com/preservim/nerdtree)插件功能|
 |normal/visual/insert|`<F4>`|打开/关闭Verilog语法检查|[ale](https://github.com/dense-analysis/ale)插件功能|
 |normal/visual/insert|`<F5>`|在打开.md文件时该快捷键为markdown预览|此为[markdown-preview.vim](https://github.com/iamcco/markdown-preview.nvim)插件功能|
 |normal/visual/insert|`<F6>`|自动生成verilog模块的例化代码|此为[automatic-verilog](https://github.com/HonkW93/automatic-verilog)插件功能，该插件详细使用方法自行查阅文档|
@@ -50,5 +50,8 @@
 |normal/visual|`ga[letter]`|代码对齐基于[letter]对齐|此为[vim-easy-align](https://github.com/junegunn/vim-easy-align)插件功能，详情参考Github上的插件介绍|
 |insert|`jj`|等同于`<ESC>`||
 
+## 自动补全
+自动补全功能依赖[coc.nvim](https://github.com/neoclide/coc.nvim),使用`tab`向下选择快速补全项，`enter`触发，支持的语言以及配置方法参阅<https://github.com/neoclide/coc.nvim/wiki/Language-servers>
+
 *上述说明并不完整，具体详见`.vimrc`注释内容*
-> 插件功能说明使用 `:help [插件命令]`查看
+> 插件功能说明使用 `:help [插件命令]`查看 
