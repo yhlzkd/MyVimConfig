@@ -1,3 +1,12 @@
+""""""""""""""""""""""""""""""""""
+" __     ___                     "
+" \ \   / (_)_ __ ___  _ __ ___  "
+"  \ \ / /| | '_ ` _ \| '__/ __| "
+"   \ V / | | | | | | | | | (__  "
+"    \_/  |_|_| |_| |_|_|  \___| "
+"                                " 
+""""""""""""""""""""""""""""""""""
+
 " config for vim-easy-align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -9,6 +18,13 @@ let mapleader = "\<space>"
 inoremap jj <esc>
 
 " some configure
+set nocompatible
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+syntax on
+" set mouse=a
 set encoding=utf-8
 set hidden
 set number
@@ -20,14 +36,28 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set list " 显示每行的末尾
+set listchars=tab:▸\ ,trail:▫
+set scrolloff=8
 set guifont=Consolas
 set autochdir
 set backspace=2 " 解决backspace键无法退格到上一行的问题
 colorscheme desert
-filetype on
-syntax on
 set laststatus=2
 
+" use <up> <down> <left> <right> to change size of window
+map <up> :res +5<CR>
+map <down> :res -5<CR>
+map <left> :vertical resize-5<CR>
+map <right> :vertical resize+5<CR>
+
+"use <leader>rc to open .vimrc
+nnoremap <leader>rc :e $MYVIMRC<CR>
+
+" Spelling check with <space>sc 
+map <LEADER>sc :set spell!<CR>
+" use <LEADER>st to open spell check trigger
+noremap <LEADER>st ea<C-x>s
 
 " coc.nvim config
 " Use tab for trigger completion with characters ahead and navigate.
@@ -57,7 +87,6 @@ endfunction
 " coc-setting.json for coc.nvim
 " let g:coc_config_home = '$VIM/vimfiles/'
 
-
 " plug-in init
 silent! call plug#begin('~/.vimfiles/bundle')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -75,7 +104,19 @@ Plug 'preservim/tagbar'
 Plug 'HonkW93/automatic-verilog'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
+Plug 'mbbill/undotree'
+Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
+
+" auto open indent guid on vim startup
+let g:indent_guides_enable_on_vim_startup = 1
+
+" undotree Config
+map <LEADER>utt :UndotreeToggle<CR>
+
+" use <f9> to open/close indent guides
+inoremap <f9> <Esc>:IndentGuidesToggle<CR>
+map <f9> <Esc>:IndentGuidesToggle<CR>
 
 
 " Markdown Preview
@@ -95,6 +136,8 @@ nnoremap <leader>lfF :LeaderfFunction<CR>
 
 " tagbar config
 nmap <F8> :TagbarToggle<CR>
+" config ctags path for tagbar
+" let g:tagbar_ctags_bin = '$VIM/extools/ctags/ctags.exe'
 " tagbar config for systemverilog
 let g:tagbar_type_systemverilog = {
     \ 'ctagstype': 'systemverilog',
@@ -147,14 +190,15 @@ let g:tagbar_type_systemverilog = {
 " NERDTree config
 " start NERDTree while vim init
 autocmd VimEnter * NERDTree | wincmd p
-let NERDTreeShowHidden  = 1
+let NERDTreeShowHidden = 1
 noremap <F3> :NERDTreeToggle<CR><C-w>l 
-let NERDTreeChDirMode = 3
+let NERDTreeChDirMode = 2
 
 
 " Airline
 let g:airline#extension#tabline#enbaled=1   " 开启 tab 栏
 let g:airline_theme='powerlineish'
+
 """"""""""""""""""""""""""""""""""""""
 """"""""""""""ale config"""""""""""""" 
 map <F4> :ALEToggle<CR>
@@ -173,8 +217,11 @@ let g:ale_sign_warning              = "--"
 
 let g:ale_lint_on_text_changed      = 0
 let g:ale_lint_on_insert_leave      = 1
-let g:ale_lint_on_enter             = 1
+let g:ale_lint_on_enter             = 0
 let g:ale_enable                    = 1
+" use below settings to config path for xvlog/xvhdl
+" let g:ale_verilog_xvlog_executable = 'path/to/xvlog'
+" let g:ale_vhdl_xvhdl_executable = 'path/to/xvhdl'
 """"""""""ale config finish"""""""""""
 """"""""""""""""""""""""""""""""""""""
 

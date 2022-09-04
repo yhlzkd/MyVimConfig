@@ -48,10 +48,17 @@
 |normal/visual/insert|`<F6>`|自动生成verilog模块的例化代码|此为[automatic-verilog](https://github.com/HonkW93/automatic-verilog)插件功能，该插件详细使用方法自行查阅文档|
 |normal/visual/insert|`<F8>`|打开显示代码结构|tagbar插件功能，需要使用[universal-ctags](https://github.com/universal-ctags/ctags-win32/releases)|
 |normal/visual|`ga[letter]`|代码对齐基于[letter]对齐|此为[vim-easy-align](https://github.com/junegunn/vim-easy-align)插件功能，详情参考Github上的插件介绍|
-|insert|`jj`|等同于`<ESC>`||
+|normal/visual/insert|`<f9>`|打开/关闭缩进显示|此为[vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides)功能，可以显示文件中的缩进情况|
+|insert|`jj`|等同于`<ESC>`|若不习惯这种用法可以在.vimrc文件中取消或修改映射|
+|normal/visual|`<leader>utt`|打开文件修改历史树|此为[undotree](https://github.com/mbbill/undotree)插件功能|
+|normal/visual|`<leader>sc`|打开/关闭拼写检查||
+|normal/visual|`<leader>st`|打开拼写修改联想||
+|normal/visual|`<leader>rc`|打开`.vimrc`配置文件||
+|normal/visual|`<up><down><left><right>`|调整窗口大小|若不习惯使用`jkhl`移动光标可在`.vimrc`文件中更改或取消按键映射|
 
 ## 自动补全
+
 自动补全功能依赖[coc.nvim](https://github.com/neoclide/coc.nvim),使用`tab`向下选择快速补全项，`enter`触发，支持的语言以及配置方法参阅<https://github.com/neoclide/coc.nvim/wiki/Language-servers>
 
 *上述说明并不完整，具体详见`.vimrc`注释内容*
-> 插件功能说明使用 `:help [插件命令]`查看 
+> 插件功能说明使用 `:help [插件命令]`查看  
