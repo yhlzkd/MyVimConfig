@@ -51,7 +51,29 @@ map <down> :res -5<CR>
 map <left> :vertical resize-5<CR>
 map <right> :vertical resize+5<CR>
 
-"use <leader>rc to open .vimrc
+" use Ctrl+jkhl to switch window
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
+
+" use  Ctrl+JKHL to move window
+noremap <leader>wj <C-w>J
+noremap <leader>wk <C-w>K
+noremap <leader>wh <C-w>H
+noremap <leader>wl <C-w>L
+
+" move text up and down
+" vnoremap <A-j> :m .+1<CR>==
+" vnoremap <A-k> :m .-2<CR>==
+xnoremap <A-j> :m '>+1<CR>gv
+xnoremap <A-k> :m '<-2<CR>gv
+
+" shiftwidth
+xnoremap > >gv
+xnoremap < <gv
+
+" use <leader>rc to open .vimrc
 nnoremap <leader>rc :e $MYVIMRC<CR>
 
 " Spelling check with <space>sc 
@@ -189,7 +211,7 @@ let g:tagbar_type_systemverilog = {
 
 " NERDTree config
 " start NERDTree while vim init
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 let NERDTreeShowHidden = 1
 noremap <F3> :NERDTreeToggle<CR><C-w>l 
 let NERDTreeChDirMode = 2
@@ -202,6 +224,8 @@ let g:airline_theme='powerlineish'
 """"""""""""""""""""""""""""""""""""""
 """"""""""""""ale config"""""""""""""" 
 map <F4> :ALEToggle<CR>
+nmap <silent> <leader>an <Plug>(ale_next_wrap)
+nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
 let g:ale_linters = {
             \'verilog': ['xvlog'],
             \'vhdl':    ['xvhdl']
