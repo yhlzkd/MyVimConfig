@@ -54,6 +54,8 @@ name = 'lang#verilog'
 # [[layers]]
 # name = 'lang#java'
 [[layers]]
+name = "lang#lua"
+[[layers]]
 name = "colorscheme"
 [[layers]]
 name = "tools"
